@@ -30,9 +30,6 @@ describe("Send mail").
       requestOptions.path.should().beEqual('/mailer');
       requestOptions.method.should().beEqual('POST');
       requestOptions.headers['content-type'].should().beEqual('application/x-www-form-urlencoded');
-
-
-      //httpBody.should().beEqual("testing");
     })
   }).
   it("Should format email parameters", function (atEnd) {
