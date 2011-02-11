@@ -1,0 +1,19 @@
+{
+  "name": "madmimi-node",
+  "description": "A client for the mad mimi api",
+  "version": "0.1.0",
+  "homepage": "www.api.madmimi.com",
+  "repository": "git://github.com/garrensmith/Madmimi-node.git",
+  "author": "Garren Smith <garren.smith@gmail.com> (www.garrensmith.com)",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "keywords": ["madmimi", "client", "api"],
+  "scripts": {
+    "test": "Jody"
+  },
+  "engines": {
+    "node": "0.4.*"
+  }
+}
