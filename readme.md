@@ -8,6 +8,10 @@ Usage
 
 Using the library is quite straight forward, for a full example see the examples folder.
 
+## Installation
+
+    npm install madmimi-node
+
 ##Creating
 
     var describe('madmimi');
