@@ -43,3 +43,10 @@ Todo
 
   * Add send to list
   * match ruby gem usage
+
+
+Copyright
+---------
+
+Copyright © 2011 Garren Smith. See LICENSE for details.
+
