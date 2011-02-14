@@ -25,11 +25,11 @@ describe("Send mail").
     madmimi.sendMail(email_options, function () {});
 
     atEnd(function () {
+      console.dir(requestOptions);
       requestOptions.host.should().beEqual('api.madmimi.com');
       requestOptions.port.should().beEqual('443');
       requestOptions.path.should().beEqual('/mailer');
       requestOptions.method.should().beEqual('POST');
-      requestOptions.headers['content-type'].should().beEqual('application/x-www-form-urlencoded');
     })
   }).
   it("Should format email parameters", function (atEnd) {
