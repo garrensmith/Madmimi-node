@@ -3,6 +3,19 @@ Madmimi Client
 
 A simple client wrapper to be able to send mails using the mad mimi api [Developer api help](http://developer.madmimi.com)
 
+Changelog
+---------
+
+## V1.1
+
+* Get list of promotions as json
+* Add user to list
+
+## V1.0
+
+* Send Email
+* Get status of transaction email
+
 Usage
 -----
 
@@ -36,7 +49,6 @@ Using the library is quite straight forward, for a full example see the examples
     madmimi.mailStatus("email_id", function (msg) {
       console.log("status: " + msg);
     });
-
 
 Todo
 ----
