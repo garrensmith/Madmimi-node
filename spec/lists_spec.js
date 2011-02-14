@@ -11,24 +11,27 @@ var email_options = {
 };
 
 
-describe("Promotions").
+describe("List").
   beforeEach( function () {
     madmimi = new Madmimi("fake@email.com", "fake-api-key");
   }).  
-  it("Should create http request for all promotions", function (atEnd) {
-      var requestOptions; 
+  it("Should add member to list", function (atEnd) {
+      var requestOptions, httpBody; 
     
     madmimi.request = function (options, body) {
      requestOptions = options;
+     httpBody = body;
     };
 
-    madmimi.promotions(function () {});
+    madmimi.addToList('fake@mail.com','test',function () {});
 
     atEnd(function () {
       requestOptions.host.should().beEqual('api.madmimi.com');
-      requestOptions.port.should().beEqual('443');
-      requestOptions.path.should().beEqual('/promotions.xml?username=fake%40email.com&api_key=fake-api-key');
-      requestOptions.method.should().beEqual('GET');
+      requestOptions.port.should().beEqual('80');
+      requestOptions.path.should().beEqual('/audience_lists/test/add');
+      requestOptions.method.should().beEqual('POST');
+
+      httpBody.should().beEqual("username=fake%40email.com&api_key=fake-api-key&email=fake%40mail.com");
     })
   });
 

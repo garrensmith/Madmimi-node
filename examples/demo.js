@@ -22,3 +22,7 @@ var madmimi = new Madmimi(process.env['email'],process.env["madmimi_api_key"], t
 madmimi.promotions(function (promotions) {  
   console.dir(promotions);  
 });
+
+/*madmimi.addToList('shelley@actionlight.co.za', "Test", function (output) {
+  console.log(output);
+});*/
