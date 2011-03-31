@@ -15,26 +15,22 @@ describe("Promotions").
   beforeEach( function () {
     madmimi = new Madmimi("fake@email.com", "fake-api-key");
   }).  
-  it("Should create http request for all promotions", function (atEnd) {
+  it("Should create http request for all promotions", function (async) {
     var requestOptions; 
     
-    madmimi.request = function (options, body) {
-     requestOptions = options;
-    };
-
-    madmimi.promotions(function () {});
-
-    atEnd(function () {
-      requestOptions.host.should().beEqual('api.madmimi.com');
+    madmimi.request = async(function (requestOptions, body) {
+     requestOptions.host.should().beEqual('api.madmimi.com');
       requestOptions.port.should().beEqual('443');
       requestOptions.path.should().beEqual('/promotions.xml?username=fake%40email.com&api_key=fake-api-key');
       requestOptions.method.should().beEqual('GET');
-    })
+    });
+
+    madmimi.promotions(function () {});
   }).  
-  it('Should make xml useful', function (atEnd) {
+  it('Should make xml useful', function (async) {
     var requestOptions; 
     
-    madmimi.request = function (options, body, cb) {
+    madmimi.request = async(function (requestOptions, body, cb) {
       var xmlResponse = ["<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         ,'<promotions>'
         ,'<promotion thumbnail="/promotion_thumbnails/small/902543.jpg" updated_at="Mon Feb 14 09:59:05 -0500 2011" hidden="false" mimio="f85cd" name="Test Promotion" id="902543">'
@@ -54,27 +50,13 @@ describe("Promotions").
 
       cb(xmlResponse);
 
-    };
+    });
   
-    var id1,id2;
 
-    madmimi.promotions(function (xmlData) {
-      id1 = xmlData[0]['@'].id;
-      id2 = xmlData[1]['@'].id;
+    madmimi.promotions(async(function (xmlData) {
+      xmlData[0]['@'].id.should().beEqual('902543');
+      xmlData[1]['@'].id.should().beEqual('902664');
+    }));
 
-
-    });
-
-    atEnd(function () {
-      id1.should().beEqual('902543');
-      id2.should().beEqual('902664');
-
-    })
-
-    
-
-    atEnd(function () {
-
-    });
-  });
+});
 
