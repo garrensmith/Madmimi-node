@@ -14,7 +14,7 @@ var email_options = {
 describe("Send mail").
   beforeEach( function () {
     madmimi = new Madmimi("fake@email.com", "fake-api-key");
-  }).  
+  }).
   it("Should create http request for api", function (async) {
     
     madmimi.request = async(function (requestOptions, body) {
@@ -27,7 +27,7 @@ describe("Send mail").
     madmimi.sendMail(email_options, function () {});
 
 }).
-  it("Should format email parameters", function (atEnd) {
+  it("Should format email parameters", function (async) {
     
    madmimi.request = async(function (requestOptions, body) {
      body.should().beEqual('promotion_name=Test%20Promotion&recipient=Jimi%20Hendrix%20%3Cjimi%40electricladyland.com%3E&subject=Test%20Promotion&from=no-reply%40guitargear.com&raw_html=%3Chtml%3E%3Chead%3E%3Ctitle%3EGreat%20promotion!%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%3ECool%20guitar%20stuff%5B%5Btracking_beacon%5D%5D%3C%2Fbody%3E%3C%2Fhtml%3E&username=fake%40email.com&api_key=fake-api-key'); 
@@ -37,3 +37,23 @@ describe("Send mail").
     madmimi.sendMail(email_options, function () {});
 
   });
+
+describe("Render Jade").
+  beforeEach( function () {
+    madmimi = new Madmimi("fake@email.com", "fake-api-key");
+  }).
+  it("Should render to html", function (async) {
+    madmimi.request = async(function (requestOptions, body) {
+     body.should().beEqual('promotion_name=Test%20Promotion&recipient=Jimi%20Hendrix%20%3Cjimi%40electricladyland.com%3E&subject=Test%20Promotion&from=no-reply%40guitargear.com&raw_html=%3Chtml%3E%3Chead%3E%3Ctitle%3EGreat%20promotion!%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%3ECool%20guitar%20stuff%5B%5Btracking_beacon%5D%5D%3C%2Fbody%3E%3C%2Fhtml%3E&username=fake%40email.com&api_key=fake-api-key'); 
+
+
+
+    });
+
+    var options = email_options;
+    delete options.raw_html;
+    options.jade = process.cwd() + '/spec/fixtures/email.jade';
+
+
+    madmimi.sendMail(options, function () {});
+});
