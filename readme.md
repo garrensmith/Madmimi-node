@@ -5,16 +5,16 @@ A simple client wrapper to be able to send mails using the mad mimi api [Develop
 
 Changelog
 ---------
-## V1.3
+## V0.1.3
 
 * Support for [Jade](http://github.com/visionmedia/jade) (see examples)
 
-## V1.1
+## V0.1.1
 
 * Get list of promotions as json
 * Add user to list
 
-## V1.0
+## V0.1.0
 
 * Send Email
 * Get status of transaction email
