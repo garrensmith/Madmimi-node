@@ -14,7 +14,8 @@
     "test": "Jody"
   },
   "dependencies" : {
-    "xml2js":"*"
+    "xml2js":"*",
+    "jade": "*"
   },
   "engines": {
     "node": ">=0.4.0"
