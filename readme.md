@@ -5,6 +5,8 @@ A simple client wrapper to be able to send mails using the mad mimi api [Develop
 
 Changelog
 ---------
+## V0.1.6
+* Bug fixes - add locals/options to jade
 ## V0.1.3
 
 * Support for [Jade](http://github.com/visionmedia/jade) (see examples)
@@ -60,6 +62,9 @@ Todo
   * match ruby gem usage
 
 
+Contributors
+------------
+[Steve Cheung](https://github.com/oldcookie)
 Copyright
 ---------
 
