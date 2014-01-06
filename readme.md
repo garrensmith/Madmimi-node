@@ -5,6 +5,8 @@ A simple client wrapper to be able to send mails using the mad mimi api [Develop
 
 Changelog
 ---------
+## V0.1.7
+Add urlencode to listnames
 ## V0.1.6
 * Bug fixes - add locals/options to jade
 ## V0.1.3
