@@ -38,7 +38,7 @@ Using the library is quite straight forward, for a full example see the examples
     var madmimi = new Madmimi("useremail","api-key");
 
 ##Send mail
-    
+
     var email_options = {
       promotion_name:"Test Promotion",
       recipient:"Jimi Hendrix <jimi@electricladyland.com>",
@@ -67,6 +67,7 @@ Todo
 Contributors
 ------------
 [Steve Cheung](https://github.com/oldcookie)
+[Raman Shalupau](https://github.com/ksaitor)
 Copyright
 ---------
 
