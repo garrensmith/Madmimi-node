@@ -5,6 +5,8 @@ A simple client wrapper to be able to send mails using the mad mimi api [Develop
 
 Changelog
 ---------
+## V0.1.8
+added addNewList method
 ## V0.1.7
 Add urlencode to listnames
 ## V0.1.6
@@ -66,10 +68,11 @@ Todo
 
 Contributors
 ------------
-[Steve Cheung](https://github.com/oldcookie)
-[Raman Shalupau](https://github.com/ksaitor)
+* [Steve Cheung](https://github.com/oldcookie)
+* [Raman Shalupau](https://github.com/ksaitor)
+
 Copyright
 ---------
 
-Copyright © 2011 Garren Smith. See LICENSE for details.
+Copyright © 2014 Garren Smith. See LICENSE for details.
 
