@@ -3,19 +3,27 @@
   "description": "A client for the mad mimi api",
   "version": "0.1.7",
   "homepage": "www.api.madmimi.com",
-  "repository": "git://github.com/garrensmith/Madmimi-node.git",
-  "author": "Garren Smith <garren.smith@gmail.com> (www.garrensmith.com)",
+  "repository": "git://github.com/ksaitor/Madmimi-node.git",
+  "authors": [
+    "Garren Smith <garren.smith@gmail.com> (www.garrensmith.com)",
+    "Raman Shalupau <raman@eventmetrics.co> (eventmetrics.co)",
+  ],
   "main": "lib/index.js",
   "directories": {
     "lib": "./lib"
   },
-  "keywords": ["madmimi", "client", "api"],
+  "keywords": [
+    "madmimi",
+    "client",
+    "api"
+  ],
   "scripts": {
     "test": "Jody"
   },
-  "dependencies" : {
-    "xml2js":"*",
-    "jade": "*"
+  "dependencies": {
+    "jade": "*",
+    "underscore": "^1.6.0",
+    "xml2js": "*"
   },
   "engines": {
     "node": ">=0.4.0"
