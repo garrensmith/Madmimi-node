@@ -6,7 +6,7 @@
   "repository": "git://github.com/ksaitor/Madmimi-node.git",
   "authors": [
     "Garren Smith <garren.smith@gmail.com> (www.garrensmith.com)",
-    "Raman Shalupau <raman@eventmetrics.co> (eventmetrics.co)",
+    "Raman Shalupau <raman@eventmetrics.co> (eventmetrics.co)"
   ],
   "main": "lib/index.js",
   "directories": {
